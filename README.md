@@ -1,61 +1,91 @@
 # Product Management Dashboard
 
-A responsive product inventory dashboard built with Next.js App Router, React,
-and TypeScript. The app demonstrates product search, combined filters, sorting,
-and client-side add/edit/detail flows using a local mock API.
+## Overview
+
+A responsive Product Management Dashboard built with Next.js, React, and TypeScript. The application allows users to browse products, search and filter the product list, sort products by price, add and edit products, and view individual product details.
+
+## Features
+
+- **Product Listing:** Displays 15 or more products with their ID, name, category, price, stock, status, and thumbnail.
+- **Search:** Search for products by name with case-insensitive matching.
+- **Filtering:** Filter products by category and status.
+- **Sorting:** Sort products by price in ascending or descending order.
+- **Add and Edit Products:** Create new products and update existing product information.
+- **Form Validation:** Validates required fields, positive prices, and non-negative whole-number stock quantities.
+- **Product Details:** View individual products on a dedicated details page.
+- **Error Handling:** Handles invalid product IDs, failed requests, and empty search results.
+- **Responsive Design:** Designed to work across desktop, tablet, and mobile screens.
+
+## Technologies Used
+
+- Next.js
+- React
+- TypeScript
+- Regular CSS
 
 ## Prerequisites
 
-- Node.js 20 or later
+- Node.js
 - npm
 
-## Install and run
+## Installation
 
-```bash
-npm install
-npm run dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3000](http://localhost:3000). The root route redirects
-to `/products`.
+   ```bash
+   git clone [MY_GITHUB_REPOSITORY_URL]
+   ```
 
-To create an optimized production build:
+2. Navigate to the project directory:
 
-```bash
-npm run build
-npm start
-```
+   ```bash
+   cd [MY_PROJECT_FOLDER]
+   ```
 
-## Data source
+3. Install dependencies:
 
-The seeded mock catalog is in `data/products.ts` and is returned by
-`GET /api/products` from `app/api/products/route.ts`. Additions and edits are
-stored in React context in the browser; refreshing resets the catalog to the
-seed data. No database or external product API is used.
+   ```bash
+   npm install
+   ```
 
-The **Test request error** button in the product list deliberately requests a
-failing mock response. Use **Retry** to load the catalog again.
+4. Start the development server:
 
-## Libraries
+   ```bash
+   npm run dev
+   ```
 
-- Next.js App Router
-- React
-- TypeScript
-- Regular CSS (no component library or external state-management library)
+5. Open http://localhost:3000 in your browser.
+
+## Data Source
+
+The application uses API mock data.
+
+Product changes do not require permanent database storage or persistence after refreshing the page.
 
 ## Screenshots
 
-Add current screenshots of the running app here before submission:
+### Desktop View
 
-- Desktop: `screenshots/products-desktop.png`
-- Mobile: `screenshots/products-mobile.png`
+![alt text](DesktopView.png)
 
-## Project routes
+### Mobile View
 
-- `/products` — searchable and filterable product inventory
-- `/products/new` — validated add form
-- `/products/[id]` — product details, with a useful unknown-ID message
-- `/products/[id]/edit` — validated edit form
+![alt text](MobileView.png)
 
-See [IMPLEMENTATION.md](./IMPLEMENTATION.md) for implementation decisions,
-known limitations, and AI-use disclosure.
+## Running the Production Build
+
+To check the production build, run:
+
+```bash
+npm run build
+```
+
+To start the production server after a successful build, run:
+
+```bash
+npm run start
+```
+
+## Notes
+
+This project was developed as part of a Junior Developer take-home assessment.

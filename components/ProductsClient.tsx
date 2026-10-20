@@ -81,14 +81,6 @@ export function ProductsClient() {
                 </p>
               )}
             </div>
-            <button
-              className="text-button"
-              type="button"
-              onClick={() => retryProducts(true)}
-              disabled={loading}
-            >
-              Test request error
-            </button>
           </div>
 
           {loading ? (
