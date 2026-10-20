@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product Management Dashboard
 
-## Getting Started
+A responsive product inventory dashboard built with Next.js App Router, React,
+and TypeScript. The app demonstrates product search, combined filters, sorting,
+and client-side add/edit/detail flows using a local mock API.
 
-First, run the development server:
+## Prerequisites
+
+- Node.js 20 or later
+- npm
+
+## Install and run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The root route redirects
+to `/products`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To create an optimized production build:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Data source
 
-To learn more about Next.js, take a look at the following resources:
+The seeded mock catalog is in `data/products.ts` and is returned by
+`GET /api/products` from `app/api/products/route.ts`. Additions and edits are
+stored in React context in the browser; refreshing resets the catalog to the
+seed data. No database or external product API is used.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The **Test request error** button in the product list deliberately requests a
+failing mock response. Use **Retry** to load the catalog again.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Libraries
 
-## Deploy on Vercel
+- Next.js App Router
+- React
+- TypeScript
+- Regular CSS (no component library or external state-management library)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Screenshots
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add current screenshots of the running app here before submission:
+
+- Desktop: `screenshots/products-desktop.png`
+- Mobile: `screenshots/products-mobile.png`
+
+## Project routes
+
+- `/products` — searchable and filterable product inventory
+- `/products/new` — validated add form
+- `/products/[id]` — product details, with a useful unknown-ID message
+- `/products/[id]/edit` — validated edit form
+
+See [IMPLEMENTATION.md](./IMPLEMENTATION.md) for implementation decisions,
+known limitations, and AI-use disclosure.
